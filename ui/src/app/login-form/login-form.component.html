@@ -1,0 +1,31 @@
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+  <div class="input">
+    <label> UserName</label>
+    <input type="text" name="UserName" (ngModel)="UserName">
+  </div>
+  <div class="input">
+    <label>Password</label>
+      <input type="password" name="Password" (ngModel)="Password">
+    </div>
+    <div class="input">
+        
+          <input type="radio" value="Male" name="Gender" (ngModel)="Gender">Male
+          <input type="radio" value="Female" name="Gender" (ngModel)="Gender">Female
+        </div>
+        <div class="input">
+          <input type="checkbox" name="isAccepted" (ngModel)="isAccepted"> Terms & Conditions
+        </div>
+
+        <div class="input">
+          
+            <select name="Profile" (ngModel)="Profile">
+                <option *ngFor="let prf of allProfiles" [ngValue]="prf.prName">
+                    {{ prf.prName }}
+                </option>
+            </select> 
+        </div>
+
+    <div class="input">
+        <input type="submit" value="Login">
+      </div>
+</form>
